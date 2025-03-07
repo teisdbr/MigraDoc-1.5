@@ -30,6 +30,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using MigraDoc.RtfRendering;
 
+[assembly: System.Runtime.Versioning.SupportedOSPlatform("windows")]
 [assembly: AssemblyTitle(VersionInfo.Title)]
 [assembly: AssemblyDescription(VersionInfo.Description)]
 [assembly: AssemblyCompany(VersionInfo.Company)]

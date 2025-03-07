@@ -1,17 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
     <ProjectType>Local</ProjectType>
-    <ProductVersion>9.0.30729</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{FEBBE5BE-9F58-4967-BBCF-801F1CFCD774}</ProjectGuid>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ApplicationIcon>
-    </ApplicationIcon>
     <AssemblyKeyContainerName>
     </AssemblyKeyContainerName>
-    <AssemblyName>MigraDoc.Rendering-gdi</AssemblyName>
     <AssemblyOriginatorKeyFile>StrongnameKey.snk</AssemblyOriginatorKeyFile>
     <DefaultClientScript>JScript</DefaultClientScript>
     <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
@@ -22,13 +14,7 @@
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
     <StartupObject>
     </StartupObject>
-    <FileUpgradeFlags>
-    </FileUpgradeFlags>
-    <UpgradeBackupLocation>
-    </UpgradeBackupLocation>
     <SignAssembly>true</SignAssembly>
-    <OldToolsVersion>3.5</OldToolsVersion>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -48,81 +34,65 @@
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
-    <TargetFrameworkProfile />
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+    <Platforms>x86</Platforms>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <OutputPath>bin\Debug\</OutputPath>
-    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <BaseAddress>285212672</BaseAddress>
-    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
     <ConfigurationOverrideFile>
     </ConfigurationOverrideFile>
     <DefineConstants>TRACE;DEBUG;GDI</DefineConstants>
     <DocumentationFile>
     </DocumentationFile>
-    <DebugSymbols>true</DebugSymbols>
     <FileAlignment>4096</FileAlignment>
     <NoStdLib>false</NoStdLib>
     <NoWarn>
     </NoWarn>
-    <Optimize>false</Optimize>
     <RegisterForComInterop>false</RegisterForComInterop>
     <RemoveIntegerChecks>false</RemoveIntegerChecks>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    <WarningLevel>4</WarningLevel>
-    <DebugType>full</DebugType>
-    <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <OutputPath>bin\Release\</OutputPath>
-    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <BaseAddress>285212672</BaseAddress>
-    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
     <ConfigurationOverrideFile>
     </ConfigurationOverrideFile>
     <DefineConstants>TRACE;GDI</DefineConstants>
     <DocumentationFile>bin\Release\MigraDoc.Rendering-gdi.xml</DocumentationFile>
-    <DebugSymbols>false</DebugSymbols>
     <FileAlignment>4096</FileAlignment>
     <NoStdLib>false</NoStdLib>
     <NoWarn>
     </NoWarn>
-    <Optimize>true</Optimize>
     <RegisterForComInterop>false</RegisterForComInterop>
     <RemoveIntegerChecks>false</RemoveIntegerChecks>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <DebugType>none</DebugType>
-    <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <OutputPath>bin\x86\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>GDI</DefineConstants>
+  </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MigraDoc.DocumentObjectModel-gdi\MigraDoc.DocumentObjectModel-gdi.csproj">
-      <Project>{4666abf3-efe5-49bd-b2e8-9e04f5949145}</Project>
-      <Name>MigraDoc.DocumentObjectModel-gdi</Name>
-    </ProjectReference>
-    <Reference Include="System">
+    <ProjectReference Include="..\MigraDoc.DocumentObjectModel-gdi\MigraDoc.DocumentObjectModel-gdi.csproj" />
+    <Reference Update="System">
       <Name>System</Name>
     </Reference>
-    <Reference Include="System.Data">
+    <Reference Update="System.Data">
       <Name>System.Data</Name>
     </Reference>
-    <Reference Include="System.Drawing">
+    <Reference Update="System.Drawing">
       <Name>System.Drawing</Name>
     </Reference>
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml">
+    <Reference Update="System.Xml">
       <Name>System.XML</Name>
     </Reference>
-    <ProjectReference Include="..\..\..\PDFsharp\src\PdfSharp-gdi\PdfSharp-gdi.csproj">
-      <Project>{5384ce57-1f94-4d22-860d-2e9c1ac12ddf}</Project>
-      <Name>PdfSharp-gdi</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\PDFsharp\src\PdfSharp.Charting-gdi\PdfSharp.Charting-gdi.csproj">
-      <Project>{cfdb7d46-ea8d-47de-b10a-9e755a1b48ba}</Project>
-      <Name>PdfSharp.Charting-gdi</Name>
-    </ProjectReference>
+    <ProjectReference Include="..\..\..\PDFsharp\src\PdfSharp-gdi\PdfSharp-gdi.csproj" />
+    <ProjectReference Include="..\..\..\PDFsharp\src\PdfSharp.Charting-gdi\PdfSharp.Charting-gdi.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\MigraDoc.Rendering\Properties\AssemblyInfo.cs">
@@ -160,6 +130,10 @@
     </Compile>
     <Compile Include="..\MigraDoc.Rendering\Rendering.ChartMapper\XValuesMapper.cs">
       <Link>Rendering.ChartMapper\XValuesMapper.cs</Link>
+    </Compile>
+    <Compile Include="..\MigraDoc.Rendering\Rendering.Printing\MigraDocPrintDocument.cs">
+      <Link>Rendering.Printing\MigraDocPrintDocument.cs</Link>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="..\MigraDoc.Rendering\Rendering.Resources\Messages2.cs">
       <Link>Rendering.Resources\Messages2.cs</Link>
@@ -320,23 +294,9 @@
     <Compile Include="..\MigraDoc.Rendering\Rendering\TopDownFormatter.cs">
       <Link>Rendering\TopDownFormatter.cs</Link>
     </Compile>
-    <Compile Include="Rendering.Forms\DocumentPreview.cs">
+    <Compile Update="Rendering.Forms\DocumentPreview.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Rendering.Forms\enums\Zoom.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="..\MigraDoc.Rendering\Rendering.Resources\Messages2.de.resx">
-      <Link>Rendering.Resources\Messages2.de.resx</Link>
-      <DependentUpon>Messages2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\MigraDoc.Rendering\Rendering.Resources\Messages2.resx">
-      <Link>Rendering.Resources\Messages2.resx</Link>
-      <DependentUpon>Messages2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Rendering.Forms\DocumentPreview.resx">
-      <DependentUpon>DocumentPreview.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="..\MigraDoc.Rendering\Rendering.Resources\Messages.de.restext">
@@ -350,9 +310,6 @@
     <None Include="..\MigraDoc.Rendering\StrongnameKey.snk">
       <Link>StrongnameKey.snk</Link>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Rendering.Printing\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -371,11 +328,12 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PreBuildEvent>
-    </PreBuildEvent>
-    <PostBuildEvent>
-    </PostBuildEvent>
-  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Rendering.Forms\DocumentPreviewWpf.cs" />
+    <EmbeddedResource Remove="Rendering.Forms\DocumentPreviewWpf.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Drawing.Common" Version="8.0.7" />
+  </ItemGroup>
+  <PropertyGroup />
 </Project>
